@@ -25,6 +25,21 @@ class Menu(models.Model):
     def __str__(self):
         return self.name
 
+    def save(
+        self, force_insert=False, force_update=False, using=None, update_fields=None
+    ):
+        if not self.root_node:
+            root_node = Node()
+            root_node.node_name = 'root'
+            root_node.url = '/'
+            if not self.pk:
+                super().save(force_insert, force_update, using, update_fields)
+                force_insert = False
+            root_node.menu = self
+            root_node.save()
+            self.root_node = root_node
+        super().save(force_insert, force_update, using, update_fields)
+
 
 class Node(models.Model):
     """
@@ -49,15 +64,34 @@ class Node(models.Model):
     parent = models.ForeignKey(
         to='self',
         on_delete=models.CASCADE,
+        related_name='child',
         null=True,
         blank=True,
     )
     menu = models.ForeignKey(
         to='Menu',
         on_delete=models.CASCADE,
+        related_name='nodes',
         null=True,
         blank=True,
     )
 
     def __str__(self):
         return self.node_name
+
+    def save(
+        self, force_insert=False, force_update=False, using=None, update_fields=None
+    ):
+        try:
+            parent_menu = self.parent.menu
+            if parent_menu:
+                self.menu = parent_menu
+        except AttributeError:
+            pass
+        super().save(force_insert, force_update, using, update_fields)
+
+    def clean(self):
+        if not self.url and not self.named_url:
+            raise ValueError(
+                {'url': 'One of "URL" or "Named URL" should have a value.'}
+            )
