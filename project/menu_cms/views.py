@@ -1,3 +1,6 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def test_menu_view(request):
+    context = {'menu': 'Test menu'}
+    return render(request, 'menu.html', context)
