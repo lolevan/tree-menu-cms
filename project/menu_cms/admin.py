@@ -6,6 +6,7 @@ from .models import Menu, Node
 
 
 class NodesInline(admin.StackedInline):
+    """class for embedding nodes"""
     model = Node
     extra = 2
     readonly_fields = [
@@ -16,6 +17,7 @@ class NodesInline(admin.StackedInline):
 
     @staticmethod
     def node_edit(node):
+        """function for edit node"""
         if node.pk:
             name_app = node._meta.app_label
             name_model = node._meta.model_name
@@ -30,12 +32,14 @@ class NodesInline(admin.StackedInline):
 
 
 class MenuAdmin(admin.ModelAdmin):
+    """class for setting models admin"""
     list_display = ['pk', 'name', 'display_name', 'root_node']
     list_display_links = ['pk', 'name']
     readonly_fields = ['root_node']
 
 
 class NodeAdmin(admin.ModelAdmin):
+    """class for setting nodes admin"""
     list_display = ['pk', 'node_name', 'named_url', 'url', 'menu', 'parent']
     list_display_links = ['pk', 'node_name']
     list_editable = ['named_url', 'url']
