@@ -1,4 +1,6 @@
 from django.contrib import admin
+from django.urls import reverse
+from django.utils.html import mark_safe
 
 from .models import Menu, Node
 
@@ -7,9 +9,24 @@ class NodesInline(admin.StackedInline):
     model = Node
     extra = 2
     readonly_fields = [
+        'node_edit',
         'menu',
         'parent',
     ]
+
+    @staticmethod
+    def node_edit(node):
+        if node.pk:
+            name_app = node._meta.app_label
+            name_model = node._meta.model_name
+            edit_url = reverse(
+                viewname=f'admin:{name_app}_{name_model}_change',
+                args=[node.pk]
+            )
+
+            return mark_safe(f'<a href="{edit_url}">Edit node</a>')
+
+        return ''
 
 
 class MenuAdmin(admin.ModelAdmin):
