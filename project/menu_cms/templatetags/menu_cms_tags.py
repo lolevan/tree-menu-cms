@@ -9,15 +9,32 @@ register = template.Library()
 
 
 def get_ancestors(node):
-    pass
+    ancestors = []
+    while node:
+        ancestors.append(node)
+        node = node.parent
+
+    return ancestors
 
 
-def draw_node(node):
-    pass
+def draw_node(node, active=False):
+    if node.named_url:
+        url = reverse(node.named_url)
+    else:
+        url = node.url
+    if active:
+        html = f'<li><a href={url}><b>{node.node_name}</b></a></li>'
+    else:
+        html = f'<li><a href={url}>{node.node_name}</a></li>'
+    return html
 
 
 def get_children(node):
-    pass
+    children = []
+    for child in node.child.all():
+        children.append(child)
+
+    return children
 
 
 @register.simple_tag(takes_context=True)
@@ -26,18 +43,22 @@ def draw_menu(context, name_menu):
     html = ''
 
     try:
-        current_url_name = resolve(current_url).url
+        current_url_name = resolve(current_url).url_name
     except Resolver404:
         current_url_name = None
 
+    print(f'name menu: {name_menu}')
+    print(f'current_url_name: {current_url_name}')
+
+
     if current_url_name:
         active_node = Node.objects.filter(
-            menu=Menu.objects.get(name=name_menu).id,
+            menu=Menu.objects.get(name=name_menu).pk
         ).get(named_url=current_url_name)
     elif current_url:
         active_node = Node.objects.filter(
-            menu=Menu.objects.get(name=name_menu).id,
-        ).get(named_url=current_url)
+            menu=Menu.objects.get(name=name_menu).pk
+        ).get(url=current_url)
 
     active_node_parent = active_node.parent
     count_ul_blocks = 1
@@ -48,7 +69,7 @@ def draw_menu(context, name_menu):
         for node in reversed(ancestors):
             html += f'<ul>{draw_node(node)}'
 
-    html += f'<ul>{draw_node(active_node)}<ul>' # -> a
+    html += f'<ul>{draw_node(active_node, active=True)}<ul>'
     children = get_children(active_node)
 
     for node in children:
