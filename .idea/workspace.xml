@@ -5,12 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f9e6d261-3a9d-4f34-87ab-ff9614e4778d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/project/menu_cms/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/menu_cms/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/test_menu_cms.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/test_menu_cms.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/menu_cms/templates/menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/menu_cms/templates/menu_cms/menu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/menu_cms/templatetags/menu_cms_tags.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/menu_cms/templatetags/menu_cms_tags.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/menu_cms/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/menu_cms/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/menu_cms/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/menu_cms/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/project/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/project/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/project/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -30,17 +40,23 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="sqlite" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../test_menu_cms_done/4 - хорошо надо разобраться/tree-menu" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.templateLanguages.PyTemplateLanguageModulesConfigurable" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.django.DjangoModulesConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Django\test_menu_cms\project\menu_cms\templates\menu_cms" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -58,7 +74,9 @@
       <workItem from="1674468965097" duration="8942000" />
       <workItem from="1674484252341" duration="43000" />
       <workItem from="1674552311591" duration="9319000" />
-      <workItem from="1674653010584" duration="4540000" />
+      <workItem from="1674653010584" duration="4972000" />
+      <workItem from="1674816511465" duration="3330000" />
+      <workItem from="1674819863462" duration="6419000" />
     </task>
     <servers />
   </component>
