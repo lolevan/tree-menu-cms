@@ -6,7 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="f9e6d261-3a9d-4f34-87ab-ff9614e4778d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/menu_cms/templatetags/menu_cms_tags.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/menu_cms/templatetags/menu_cms_tags.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/menu_cms/templates/menu_cms/menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/menu_cms/templates/menu_cms/menu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/menu_cms/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/menu_cms/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/menu_cms/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/menu_cms/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +47,7 @@
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.django.DjangoModulesConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -71,7 +73,8 @@
       <workItem from="1674653010584" duration="4972000" />
       <workItem from="1674816511465" duration="3330000" />
       <workItem from="1674819863462" duration="7016000" />
-      <workItem from="1674878024836" duration="1558000" />
+      <workItem from="1674878024836" duration="4630000" />
+      <workItem from="1675235893357" duration="715000" />
     </task>
     <servers />
   </component>
