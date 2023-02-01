@@ -32,6 +32,7 @@ class Menu(models.Model):
             root_node = Node()
             root_node.node_name = 'root'
             root_node.url = '/'
+            root_node.named_url = self.name
             if not self.pk:
                 super().save(force_insert, force_update, using, update_fields)
                 force_insert = False
