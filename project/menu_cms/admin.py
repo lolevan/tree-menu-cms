@@ -13,6 +13,7 @@ class NodesInline(admin.StackedInline):
         'node_edit',
         'menu',
         'parent',
+        'named_url',
     ]
 
     @staticmethod
@@ -33,18 +34,24 @@ class NodesInline(admin.StackedInline):
 
 class MenuAdmin(admin.ModelAdmin):
     """class for setting models admin"""
-    list_display = ['pk', 'name', 'display_name', 'root_node']
-    list_display_links = ['pk', 'name']
+    list_display = ['pk', 'display_name', 'name', 'root_node']
+    list_display_links = ['pk', 'display_name']
     readonly_fields = ['root_node']
+    fields = ('display_name', 'name', 'root_node')
 
 
 class NodeAdmin(admin.ModelAdmin):
     """class for setting nodes admin"""
     list_display = ['pk', 'node_name', 'named_url', 'url', 'menu', 'parent']
     list_display_links = ['pk', 'node_name']
-    list_editable = ['named_url', 'url']
-    readonly_fields = ['menu', 'parent']
+    list_filter = ['menu']
+    list_editable = ['url']
+    readonly_fields = ['menu', 'parent', 'named_url']
     inlines = [NodesInline]
+    save_on_top = True
+
+    def has_add_permission(self, request):
+        return False
 
 
 admin.site.register(Menu, MenuAdmin)
