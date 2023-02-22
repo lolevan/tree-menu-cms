@@ -97,8 +97,11 @@ http://127.0.0.1:8000/admin/
 
 ![image](https://user-images.githubusercontent.com/86129944/216991693-b602e7c2-d187-47ff-980b-b4f0ff0b79c0.png)
 ```
-- ulr дочерних узлов должен обезательно начинаться с **/menu/**
+- ulr дочерних узлов должен обезательно начинаться с /menu/
 ```
+
+![image](https://user-images.githubusercontent.com/86129944/220719191-7334ae81-fc9a-47b3-8705-a62df6798751.png)
+
 
 Для показа меню надо провести следущие манипуляции:
 
